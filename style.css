@@ -47,6 +47,10 @@ header {
     position: fixed;
     width: 100%;
     text-align: end;
+    transition: all .5s ease-in-out;
+}
+
+.bg-dark {
     background: rgba(10,10,10, .95);
 }
 
