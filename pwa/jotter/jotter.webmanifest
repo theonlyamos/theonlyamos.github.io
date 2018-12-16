@@ -4,8 +4,8 @@
     "description": "A jotting progressive web application",
     "start_url": "/index.html",
     "display": "standalone",
-    "theme_color": "",
-    "background_color": "",
+    "theme_color": "#99979c",
+    "background_color": "#fff",
     "icons": [
         {
             "src": "icons/jotter_32x32.png",
