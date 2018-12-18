@@ -2,14 +2,19 @@
     "name": "Jotter",
     "short_name": "Jotter",
     "description": "A jotting progressive web application",
-    "start_url": "/index.html",
+    "start_url": "/pwa/jotter/index.html",
     "display": "standalone",
-    "theme_color": "#99979c",
+    "theme_color": "#000",
     "background_color": "#fff",
     "icons": [
         {
             "src": "icons/jotter_32x32.png",
             "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/jotter_48x48.png",
+            "sizes": "48x48",
             "type": "image/png"
         },
         {

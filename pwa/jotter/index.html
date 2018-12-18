@@ -6,13 +6,44 @@
     <title>Jotter</title>
     <meta name="description" content="A jotting progressive web application">
     <meta name="author" content="Amos Amissah">
-    <meta name="theme-color" content="#99979c">
+    <meta name="theme-color" content="#000">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico"/>
     <link rel="manifest" href="jotter.webmanifest"/>
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <script src="app.js"></script>
 </head>
 <body>
-    <h1>Hello</h1>
+    <section class="jots-container" id="jotsContainer">
+        <button class="tool add-button" id="addButton">+</button>
+        <div class="card bg-light" id="cardTemplate" hidden>
+            <header class="card-header">
+                <kbd class=""><small class="jot-time text-secondary">Tue Dec 18 2018 17:56:34</small></kbd>
+            </header>
+            <article class="card-body">
+                <code class="jot-body">
+                    Hello
+                </code>
+            </article>
+        </div>
+    </section>
+    <main id="editor">
+        <article class="tools edit bg-light">
+            <header>
+                <button class="tool" id="saveButton">Save</button>
+                <button class="text-danger tool" id="cancelButton">Cancel</button>
+            </header>
+            <textarea id="content" rows="20" placeholder="Type here..." name="jotBody" autofocus></textarea>
+        </article>
+        <article class="tools color">
+            <div class="tool bg-primary"></div>
+            <div class="tool bg-success"></div>
+            <div class="tool bg-warning"></div>
+            <div class="tool bg-info"></div>
+            <div class="tool bg-dark"></div>
+            <div class="tool bg-danger"></div>
+            <div class="tool bg-light"></div>
+        </article>
+    </main>
 </body>
 </html>
