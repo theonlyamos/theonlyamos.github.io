@@ -14,6 +14,7 @@
     let app = {
         save: saveJot,
         load: loadJots,
+        delete: deleteJot,
         colors: {
             "primary": {"bg": "bg-primary", "color": "text-primary"},
             "secondary": {"bg": "bg-secondary", "color": "text-dark"},
@@ -44,6 +45,15 @@
             editor.style.display = 'none'
             return;
         }
+        else if (e.target.matches("#deleteButton")) {
+            var editor = document.getElementById('editor');
+            editor.style.display = 'none'
+            if (editor.hasAttribute("data-index")) {
+                var index = parseInt(editor.getAttribute("data-index"))
+
+                app.delete(index)
+            }
+        }
         else if (e.target.matches('#saveButton')) {
             app.save()
             var editor = document.getElementById('editor');
@@ -70,6 +80,7 @@
             var editor = document.getElementById('editor');
             editor.setAttribute("data-index", parent.getAttribute("data-index"))
             editor.style.display = 'flex'
+            return
         }
         else if (e.target.matches("#color-tool")) {
             var colors = e.target.getAttribute("data-colors")
@@ -139,7 +150,7 @@
     }
 
     function loadJots(jots){
-        jots = JSON.parse(jots)
+        let jots = JSON.parse(jots)
         document.getElementById("jotsContainer").innerHTML = ""
         for (let i = 0; i < jots.length; i++) {
             var jot = jots[i]
@@ -158,5 +169,15 @@
 
             document.getElementById("jotsContainer").prepend(card)
         }
+    }
+
+    function deleteJot(index){
+        let jots = localStorage.getItem("jots")
+        jots = JSON.parse(jots)
+        jots.slice(index, 1)
+        localStorage.setItem("jots", jots)
+        jots = localStorage.getItem("jots")
+
+        app.load(jots)
     }
 })();

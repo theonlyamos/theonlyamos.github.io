@@ -64,8 +64,8 @@ textarea:focus {
 }
 
 .tool {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     margin-left: 5px;
     border: 2px solid white;
