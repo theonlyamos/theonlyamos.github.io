@@ -12,6 +12,14 @@ body {
   overflow: hidden;
 }
 
+a,
+a:link,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: white;
+}
+
 #background {
   height: 100vh;
   width: 100%;
@@ -65,12 +73,13 @@ figure {
   padding: 10px;
 }
 
-.meal-instructions::-webkit-scrollbar {
+h5::-webkit-scrollbar {
   width: 0;
   background-color: transparent;
 }
 
-.meal-instructions {
+h5 {
+  display: none;
   font-weight: 100;
   background: rgba(10, 10, 10, 0.6);
   padding: 2px;
@@ -84,15 +93,31 @@ figure {
   position: fixed;
   width: 50px;
   height: 50px;
-  right: 25px;
+  right: 15px;
   bottom: 2%;
   z-index: 9999;
   box-shadow: 1px 1px 3px #222;
   border-radius: 50%;
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 .meal-button {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.page {
+  text-align: left;
+}
+
+.page h4, .page h5 {
+  margin: 0;
 }
