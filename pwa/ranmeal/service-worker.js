@@ -15,8 +15,12 @@
 var dataCacheName = 'ranmeal-v1';
 var cacheName = 'ranmeal-final-1';
 var filesToCache = [
-  '/',
-  './index.html'
+  'index.html',
+  'favicon.ico',
+  'manifest.json',
+  'service-worker.js',
+  'assets/css/styles.css',
+  'assets/scripts/app.js'
 ];
 
 self.addEventListener('install', function(e) {
@@ -52,3 +56,4 @@ self.addEventListener('fetch', function(e) {
       })
     );
 });
+

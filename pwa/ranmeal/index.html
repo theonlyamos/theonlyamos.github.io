@@ -11,84 +11,8 @@
   <meta name="theme-color" content="#2196f3">
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="manifest" href="manifest.json" />
-  <script>
-    if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('./service-worker.js')
-             .then(function() { console.log('Service Worker Registered'); });
-  }
-  </script>
+  <link rel="stylesheet" media="screen" href="assets/css/styles.css"/>
 </head>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  * {
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  #background {
-    height: 100vh;
-    width: 100%;
-    filter: blur(10px);
-    background-position: center;
-    background-size: cover;
-  }
-
-  .card {
-    width: 90%;
-    height: 100vh;
-    margin: 10px auto;
-    padding: 0 !important;
-    box-shadow: 1px 1px 5px grey;
-    overflow: auto;
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .card-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  figure {
-    padding: 0;
-    margin: 0;
-  }
-
-  .card::-webkit-scrollbar {
-    width: 0;
-    background-color: transparent;
-  }
-
-  .card-title {
-    padding: 5px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .card-content {
-    padding: 10px;
-  }
-
-  .meal-instructions {
-    font-weight: 100;
-  }
-</style>
-
 <body>
   <section id="background"></section>
   <section class="card">
@@ -101,32 +25,10 @@
       <hr>
     </article>
   </section>
-  <script>
-    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-      .then(res => res.json())
-      .then(res => {
-        const meal = res.meals[0];
-
-        let bg = document.getElementById('background');
-        let thumbnail = document.getElementById('card-img');
-        let title = document.getElementById('card-title');
-        let instructs = document.getElementById('meal-instructions');
-
-        title.innerHTML = meal['strMeal'] + '<hr>';
-
-        bg.style.backgroundImage = `url(${meal['strMealThumb']})`;
-        bg.style.backgroundPosition = "center";
-        bg.style.backgroundRepeat = "no-repeat";
-        bg.style.backgroundSize = "cover";
-
-        thumbnail.src = meal['strMealThumb'];
-        instructs.innerText = meal['strInstructions'];
-
-      })
-      .catch(e => {
-        console.warn(e);
-      });
-  </script>
+  <section id="fab" class="fab">
+    <img src="images/icons/icon-72x72.png" alt="get meal image" class="meal-button" id="meal-button">
+  </section>
+  <script src="assets/scripts/app.js"></script>
 </body>
 
 </html>

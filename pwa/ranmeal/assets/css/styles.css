@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial,
+    Helvetica,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#background {
+  height: 100vh;
+  width: 100%;
+  filter: blur(10px);
+  background-position: center;
+  background-size: cover;
+}
+
+.card {
+  width: 90%;
+  height: 100vh;
+  margin: 10px auto;
+  padding: 0 !important;
+  box-shadow: 1px 1px 5px grey;
+  overflow: auto;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+.card::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.card-title {
+  padding: 3px;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.meal-instructions {
+  font-weight: 100;
+  background: rgba(10, 10, 10, 0.6);
+  padding: 2px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+
+.fab {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  right: 25px;
+  bottom: 2%;
+  z-index: 9999;
+  box-shadow: 1px 1px 3px #222;
+  border-radius: 50%;
+}
+
+.meal-button {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
