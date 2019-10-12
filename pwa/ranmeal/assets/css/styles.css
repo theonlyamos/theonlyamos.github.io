@@ -65,12 +65,19 @@ figure {
   padding: 10px;
 }
 
+.meal-instructions::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
 .meal-instructions {
   font-weight: 100;
   background: rgba(10, 10, 10, 0.6);
   padding: 2px;
   letter-spacing: 1px;
   border-radius: 5px;
+  max-height: 200px;
+  overflow: auto;
 }
 
 .fab {
